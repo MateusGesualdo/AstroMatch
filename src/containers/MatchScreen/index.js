@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {AppBar} from '../../components/AppBar'
-import {mdiAccountSwitch} from '@mdi/js'
-import {updateCurrentPage} from '../../actions/route'
-import {Avatar, List, ListItem, ListText, MatchIcon} from './styled'
-import { getMatches } from '../../actions/profiles'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { AppBar } from '../../components/AppBar'
+import { mdiAccountSwitch } from '@mdi/js'
+import { updateCurrentPage } from '../../actions/route'
+import { Avatar, List, ListItem, ListText, MatchIcon } from './styled'
+import { getMatches, selectMatchProfile } from '../../actions/profiles'
 
 class MatchScreen extends Component {
 	componentDidMount() {
@@ -15,7 +15,7 @@ class MatchScreen extends Component {
 	}
 
 	render() {
-		const {goToSwipeScreen, matches} = this.props
+		const { goToSwipeScreen, matches } = this.props
 
 		return (
 			<div>
@@ -28,8 +28,11 @@ class MatchScreen extends Component {
 				/>
 				<List>
 					{matches && matches.map((match) => (
-						<ListItem key={match.name} onClick={()=>this.props.goToProfileScreen()} >
-							<Avatar src={match.photo}/>
+						<ListItem
+							id={match.id}
+							key={match.id}
+							onClick={(ev) => this.props.selectMatchProfile(ev.target.id) } >
+							<Avatar src={match.photo} />
 							<ListText>{match.name}</ListText>
 						</ListItem>
 					))}
@@ -40,7 +43,7 @@ class MatchScreen extends Component {
 }
 
 MatchScreen.propTypes = {
-	goToSwipeScreen: PropTypes.func.isRequired,
+	selectMatchProfile: PropTypes.func.isRequired,
 	getMatches: PropTypes.func.isRequired,
 	matches: PropTypes.array
 }
@@ -51,7 +54,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	goToSwipeScreen: () => dispatch(updateCurrentPage('SwipeScreen')),
-	goToProfileScreen: () => dispatch(updateCurrentPage('ProfileScreen')),
+	selectMatchProfile: (id) => dispatch(selectMatchProfile(id)),
 	getMatches: () => dispatch(getMatches())
 })
 
