@@ -24,7 +24,7 @@ export const selectMatchProfile = (id) => (dispatch) => {
 	dispatch(updateCurrentPage("ProfileScreen"))
 }
 
-/**************************************  START OF INTEGRATED VERSION   ******************************************/
+/**************************************  INTEGRATED SECTION (START)  ******************************************/
 
 // export const getMatches = () => async (dispatch) => {
 // 	try {
@@ -62,7 +62,7 @@ export const selectMatchProfile = (id) => (dispatch) => {
 // 	dispatch(getNewProfile())
 // }
 
-/**************************************  START OF OFFLINE VERSION   *****************************************/
+/**************************************   OFFLINE SECTION (START)  *****************************************/
 
 let swipedProfiles = JSON.parse(
 	window.localStorage.getItem("swipedProfiles")
