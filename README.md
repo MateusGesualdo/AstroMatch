@@ -1,2 +1,2 @@
 # AstroMatch
-![](screenshot.png)
+![](sreenshot.png)
