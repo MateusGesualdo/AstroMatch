@@ -7,7 +7,7 @@ const initialState = {
 const profiles = (state = initialState, action) => {
   switch (action.type) {
 
-    case "SET_PROFILE":
+    case "SET_NEW_PROFILE":
       return { ...state, profileToSwipe: action.payload.profile }
 
     case "SET_MATCHES":
