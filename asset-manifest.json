@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/AstroMatch/static/js/main.1074417d.chunk.js",
+    "main.js.map": "/AstroMatch/static/js/main.1074417d.chunk.js.map",
+    "runtime~main.js": "/AstroMatch/static/js/runtime~main.5274e790.js",
+    "runtime~main.js.map": "/AstroMatch/static/js/runtime~main.5274e790.js.map",
+    "static/js/2.2a11b960.chunk.js": "/AstroMatch/static/js/2.2a11b960.chunk.js",
+    "static/js/2.2a11b960.chunk.js.map": "/AstroMatch/static/js/2.2a11b960.chunk.js.map",
+    "index.html": "/AstroMatch/index.html",
+    "precache-manifest.f63e1dd651841ca8726284ce52af87e5.js": "/AstroMatch/precache-manifest.f63e1dd651841ca8726284ce52af87e5.js",
+    "service-worker.js": "/AstroMatch/service-worker.js"
+  }
+}
